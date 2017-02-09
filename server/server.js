@@ -17,11 +17,24 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
     console.log('New user connected');
 
+    socket.emit('newMessage', {
+        from: 'Admin', 
+        text: 'Welcome to chat',
+        createdAt: Date.now() / 1000 | 0
+    });
+    socket.broadcast.emit('newMessage', {
+        from: 'Admin', 
+        text: 'A new user has joined',
+        createdAt: Date.now() / 1000 | 0
+    });
+
     socket.on('createMessage', (message) => {
         console.log(`From: ${message.from}, Text: ${message.text}`);
         message.createdAt = Date.now() / 1000 | 0;
         socket.emit('newMessage', message);
+        // socket.broadcast.emit('newMessage', message);
     });
+
 });
 
 server.listen(port, () => {
