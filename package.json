@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "start":  "node server/server.js",
-    "test":   "mocha server/**/*.test.js",
-    "test-w": "./node_modules/.bin/nodemon --exec \"yarn test\"",
-    "watch":  "./node_modules/.bin/nodemon -e html,js,json --ignore node_modules/ server/server.js"
+    "test":   "yarn run mocha -- server/**/*.test.js",
+    "test-w": "yarn run nodemon -- --exec \"yarn test\"",
+    "watch":  "yarn run nodemon -- -e html,js,json --ignore node_modules/ server/server.js"
   },
   "engines": {
     "node": "6.9.1"
