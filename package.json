@@ -1,0 +1,19 @@
+{
+  "name": "node-chat-app",
+  "version": "1.0.0",
+  "description": "A sample node app demonstrating web sockets.",
+  "main": "index.js",
+  "repository": {},
+  "author": "Brooks Garrett <brooks+git@brooksgarrett.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "mocha **/*.test.js"
+  },
+  "engines": {
+    "node": "6.9.1"
+  },
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
