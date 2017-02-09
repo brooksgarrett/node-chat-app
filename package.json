@@ -7,18 +7,21 @@
   "author": "Brooks Garrett <brooks+git@brooksgarrett.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node server/server.js",
-    "test": "mocha **/*.test.js",
-    "watch": "./node_modules/.bin/nodemon -e html,js,json --ignore node_modules/ server/server.js"
+    "start":  "node server/server.js",
+    "test":   "mocha server/**/*.test.js",
+    "test-w": "./node_modules/.bin/nodemon --exec \"yarn test\"",
+    "watch":  "./node_modules/.bin/nodemon -e html,js,json --ignore node_modules/ server/server.js"
   },
   "engines": {
     "node": "6.9.1"
   },
   "dependencies": {
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "socket.io": "^1.7.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
-    "socket.io": "^1.7.2"
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0"
   }
 }
